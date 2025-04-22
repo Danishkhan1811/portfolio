@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-krona-one: 'Krona One', sans-serif;
 }
 
 @theme inline {
@@ -20,7 +21,34 @@
 }
 
 body {
-  background: var(--background);
+  margin: 0;
+  padding: 0;
+  background-image: url('/bg2.png');
+  background-size: cover; /* Ensures the background image covers the entire body */
+  background-attachment: fixed; /* Keeps the background image fixed while scrolling */
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: "Krona One", sans-serif; */
+  font-family: var(--font-krona-one);
+  font-weight: 400;
+  font-style: normal;
+  position: relative; /* Makes sure the video can be positioned inside the body */
+  z-index: 1;
+}
+
+#bg-video {
+  position: absolute; /* Position it on top of the background image */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the body like the background image */
+  z-index: -1; /* Put the video behind the content */
+  pointer-events: none; /* Allows content to be clickable */
+  opacity: 0.3; /* Adjust opacity to make the video less intrusive (optional) */
+}
+
+/* Optional: Style for the content to make it appear above the video */
+#content {
+  position: relative;
+  z-index: 10; /* Ensures content appears above the video */
 }
