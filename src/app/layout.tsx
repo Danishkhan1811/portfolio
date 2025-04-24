@@ -34,13 +34,19 @@
 // }
 
 import type { Metadata } from "next";
-import { Krona_One } from "next/font/google";
+import { Krona_One, Poppins } from "next/font/google";
 import "./globals.css";
 
 const kronaOne = Krona_One({
   variable: "--font-krona-one",
   subsets: ["latin"],
   weight: "400",
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"], // add more if needed
 });
 
 export const metadata: Metadata = {
@@ -54,8 +60,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${kronaOne.variable} font-sans antialiased`}>
+    <html lang="en" className={`${kronaOne.variable} ${poppins.variable}`}>
+      <body className="font-sans antialiased">
         {children}
       </body>
     </html>

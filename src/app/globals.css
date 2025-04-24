@@ -1,24 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
   --font-krona-one: 'Krona One', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.font-krona {
+  font-family: var(--font-krona-one);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.font-poppins {
+  font-family: var(--font-poppins);
 }
+
 
 body {
   margin: 0;
@@ -27,8 +21,6 @@ body {
   background-size: cover; /* Ensures the background image covers the entire body */
   background-attachment: fixed; /* Keeps the background image fixed while scrolling */
   color: var(--foreground);
-  /* font-family: "Krona One", sans-serif; */
-  font-family: var(--font-krona-one);
   font-weight: 400;
   font-style: normal;
   position: relative; /* Makes sure the video can be positioned inside the body */
